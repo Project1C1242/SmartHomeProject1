@@ -11,7 +11,7 @@ using namespace std;
 int main()
 {
     SmartHomeManager manager;
-
+    //HELLo this is PArth
     // 1. Setup: Adding devices to the manager
     manager.addLightingDevice(new Light("Living Room Light", 1));
     manager.addEnvironmentDevice(new Thermostat("Main Thermostat", 2));
