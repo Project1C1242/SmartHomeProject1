@@ -1,0 +1,3 @@
+C:/Users/epita/Documents/VsCode Workspace/C++ Workspace/Group Work/SmartHomeProject1/build/CMakeFiles/MyGroupProject.dir
+C:/Users/epita/Documents/VsCode Workspace/C++ Workspace/Group Work/SmartHomeProject1/build/CMakeFiles/edit_cache.dir
+C:/Users/epita/Documents/VsCode Workspace/C++ Workspace/Group Work/SmartHomeProject1/build/CMakeFiles/rebuild_cache.dir

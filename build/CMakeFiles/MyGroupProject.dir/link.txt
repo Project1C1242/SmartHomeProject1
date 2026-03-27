@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\MyGroupProject.dir/objects.a
+C:\PROGRA~2\mingw64\bin\ar.exe qc CMakeFiles\MyGroupProject.dir/objects.a @CMakeFiles\MyGroupProject.dir\objects1.rsp
+C:\PROGRA~2\mingw64\bin\G__~1.EXE -g -Wl,--whole-archive CMakeFiles\MyGroupProject.dir/objects.a -Wl,--no-whole-archive -o MyGroupProject.exe -Wl,--out-implib,libMyGroupProject.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\MyGroupProject.dir\linkLibs.rsp
