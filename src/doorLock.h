@@ -14,8 +14,12 @@ public:
     void display() const override;
     void update() override;
 
+    void setLocked(bool locked);
+    
     void lock();
     void unlock();
+
+    
 };
 
 #endif
