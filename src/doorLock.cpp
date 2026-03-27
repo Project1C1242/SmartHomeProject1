@@ -9,6 +9,11 @@ DoorLock::DoorLock(string name, int id) : SmartDevice(name, id)
     locked = true; // start locked
 }
 
+void DoorLock::setLocked(bool locked)
+{
+    this->locked = locked;
+}
+
 void DoorLock::lock()
 {
     if (locked)
