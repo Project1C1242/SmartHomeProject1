@@ -13,6 +13,11 @@ include_directories(include)
 # Add your source files here as you create them
 set(SOURCES
     src/main.cpp
+    src/light.cpp
+    src/thermostat.cpp
+    src/doorLock.cpp
+    src/smartHomeManager.cpp
+    src/smartDevice.cpp
 )
 
 # Create the executable
