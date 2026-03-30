@@ -10,6 +10,7 @@ private:
 
 public:
     DoorLock(string name, int id);
+    bool getIsLocked() const;
 
     void display() const override;
     void update() override;

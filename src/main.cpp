@@ -11,19 +11,19 @@ using namespace std;
 int main()
 {
     SmartHomeManager manager;
-    //HELLo this is PArth
     // 1. Setup: Adding devices to the manager
     manager.addLightingDevice(new Light("Living Room Light", 1));
     manager.addEnvironmentDevice(new Thermostat("Main Thermostat", 2));
     manager.addSecurityDevice(new DoorLock("Front Door", 3));
 
     // 2. Initial check: Shows state of all devices
-    cout << "-/- Initial System Audit -/-" << endl;
+    cout << "\n-/- Initial System Audit -/-" << endl;
     manager.displayAll();
 
     // 3. Demo Interactions
+    cout << "\n-//- Demo Interactions -//-" << endl;
     // Manual Interaction: Lighting (ID: 1)
-    cout << "\n-//- Manual Interaction: Setting Light Brightness (ID: 1) -//-" << endl;
+    cout << "\n/!/ Manual Interaction: Light Brightness (ID: 1) " << endl;
     try {
         // Find the device pointer
         SmartDevice* device = manager.findDevice(1);
@@ -31,21 +31,18 @@ int main()
         Light* myLight = dynamic_cast<Light*>(device);
 
         if (myLight) {
-            myLight->turnOn();
-            myLight->setBrightness(85);
-            cout << "Successfully set " << myLight->getName() << " to 85% brightness." << endl;
-            
+            int targetBrightness = 85; 
+                myLight->turnOn();
+                myLight->setBrightness(targetBrightness);
+            cout << "Successfully set " << myLight->getName() << " to " << myLight->getBrightness() << "% brightness." << endl;
         }
     }
     catch (const InvalidValueException& e) {
-        cout << "Custom Error: " << e.what() << endl;
-    }
-    catch (const exception& e) {
-        cout << "Standard Error: " << e.what() << endl;
+        cout << "Error: " << e.what() << endl;
     }
 
-    // Manual Interaction: Security (ID: 2)
-        cout << "\n-//- Interaction: Unlocking Front Door (ID: 3) -//-" << endl;
+    // Manual Interaction: Security (ID: 3)
+        cout << "\n/!/ Interaction: Front Door (ID: 3)" << endl;
     try {
         SmartDevice* device = manager.findDevice(3);
 
@@ -53,7 +50,7 @@ int main()
 
         if (myDoor) {
             myDoor->unlock();
-            cout << "Successfully sent 'Unlock' command to: " << myDoor->getName() << endl;
+            cout << "Status Update: " << myDoor->getName() << " is now " << (myDoor->getIsLocked() ? "LOCKED" : "UNLOCKED") << "." << endl;
         }
     }
     catch (const exception& e) {
@@ -61,17 +58,17 @@ int main()
     }
 
     // Manual Interaction: Environment (ID: 2)
-    cout << "\n-//- Manual Interaction: Adjusting Thermostat (ID: 2) -//-" << endl;
+    cout << "\n/!/ Manual Interaction: Adjusting Thermostat (ID: 2) " << endl;
     try {
         SmartDevice* device = manager.findDevice(2);
         
-        // FIX
         Thermostat* myThermo = dynamic_cast<Thermostat*>(device);
 
         if (myThermo) {
-            myThermo->setTemperature(80);
+            int targetTemp = 72.5;
+            myThermo->setTemperature(targetTemp);
     
-            cout << "Successfully adjusted " << myThermo->getName() << " to 80" << endl;
+            cout << "Successfully adjusted " << myThermo->getName() << " to " << myThermo->getTemperature() << " degrees." << endl;
         }
     }
     catch (const exception& e) {

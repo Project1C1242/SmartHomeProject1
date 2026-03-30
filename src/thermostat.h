@@ -10,7 +10,9 @@ private:
 
 public:
     Thermostat(string name, int id);
+    int getTemperature() const;
 
+    // Overriding the pure virtual functions from SmartDevice
     void display() const override;
     void update() override;
 

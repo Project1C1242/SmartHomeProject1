@@ -4,9 +4,10 @@
 
 using namespace std;
 
+// Pass the name and id up to the SmartDevice constructor
 Thermostat::Thermostat(string name, int id) : SmartDevice(name, id)
 {
-    temperature = 70.0;
+    temperature = 68; //default temp
 }
 
 void Thermostat::setTemperature(float temp)
@@ -20,7 +21,11 @@ void Thermostat::setTemperature(float temp)
 void Thermostat::display() const
 {
     cout << "Thermostat [" << getName() << "] "
-         << "Temp: " << temperature << endl;
+         << "Current Temp: " << temperature <<" F" << endl;
+}
+
+int Thermostat::getTemperature() const {
+    return temperature; 
 }
 
 void Thermostat::update()

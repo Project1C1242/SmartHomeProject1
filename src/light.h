@@ -12,6 +12,8 @@ private:
 
 public:
     Light(string name, int id);
+    int getBrightness() const;
+    bool getIsOn() const;
 
     void display() const override;
     void update() override;

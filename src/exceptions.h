@@ -3,22 +3,32 @@
 
 #include <exception>
 
-
-class InvalidValueException : public std::exception
-{
+// Value Errors
+class InvalidValueException : public std::exception {
 public:
-    const char* what() const noexcept override
-    {
-        return "Invalid value provided";
+    const char* what() const noexcept override {
+        return "Value provided outside of expected range.";
     }
 };
 
-class DeviceNotFoundException : public std::exception
-{
+// State Errors
+class DeviceStateException : public std::exception {
+private:
+    const char* message;
 public:
-    const char* what() const noexcept override
-    {
-        return "device not found";
+    // Pass custom message to exception
+    DeviceStateException(const char* msg) : message(msg) {}
+    
+    const char* what() const noexcept override {
+        return message;
+    }
+};
+
+// Connection Errors
+class DeviceNotFoundException : public std::exception {
+public:
+    const char* what() const noexcept override {
+        return "Error: Device ID not found.";
     }
 };
 

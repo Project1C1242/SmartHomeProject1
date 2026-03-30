@@ -17,15 +17,14 @@ void DoorLock::setLocked(bool locked)
 void DoorLock::lock()
 {
     if (locked)
-        throw runtime_error("Door is already locked");
-
+        throw DeviceStateException("Door is already locked!");
     locked = true;
 }
 
 void DoorLock::unlock()
 {
     if (!locked)
-        throw runtime_error("Door is already unlocked");
+        throw DeviceStateException("Door is already unlocked");
 
     locked = false;
 }
@@ -36,8 +35,10 @@ void DoorLock::display() const
          << (locked ? "LOCKED" : "UNLOCKED") << endl;
 }
 
+bool DoorLock::getIsLocked() const {
+    return locked;
+}
+
 void DoorLock::update()
 {
 }
-
-// hello
