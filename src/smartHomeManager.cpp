@@ -55,7 +55,7 @@ SmartDevice* SmartHomeManager::findDevice(int id) const
         if (d->getID() == id)
             return d;
 
-    throw DeviceNotFoundException();;
+    throw DeviceNotFoundException();
 }
 
 // Destructor
