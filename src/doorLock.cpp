@@ -41,6 +41,5 @@ bool DoorLock::getIsLocked() const {
 
 void DoorLock::update()
 {
-    cout << "Pinging the door lock security server" << endl;
-}
+    cout << "connecting the door lock security server" << endl;
 }
