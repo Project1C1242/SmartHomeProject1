@@ -16,7 +16,7 @@ public:
     void display() const override;
     void update() override;
 
-    void setTemperature(double temp);
+    void setTemperature(int temp);
 };
 
 #endif
