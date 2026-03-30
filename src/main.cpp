@@ -29,7 +29,7 @@ int main()
         SmartDevice* device = manager.findDevice(1);
         // Convert the generic pointer to a specific pointer
         Light* myLight = dynamic_cast<Light*>(device);
-        Switchable* swLight = dynamic_cast<Light*>(device);
+        Switchable* swLight = dynamic_cast<Switchable*>(device);
 
         if (myLight && swLight) {
             int targetBrightness = 85; 
@@ -69,7 +69,7 @@ int main()
         Thermostat* myThermo = dynamic_cast<Thermostat*>(device);
 
         if (myThermo) {
-            int targetTemp = 80;
+            float targetTemp = 80.5f;
             myThermo->setTemperature(targetTemp);
     
             cout << "Successfully adjusted " << myThermo->getName() << " to " << myThermo->getTemperature() << " degrees." << endl;
