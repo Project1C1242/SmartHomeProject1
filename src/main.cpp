@@ -78,8 +78,31 @@ int main()
     catch (const exception& e) {
         cout << "Error: " << e.what() << endl;
     }
+
+    // 4. Intentional Exception Demonstration
+    cout << "\n-//- Demonstrating Error Handling -//-" << endl;
     
-    // 4. Final Audit: Verify changes made to system
+    cout << "\n/!/ Testing Invalid ID Request..." << endl;
+    try {
+        SmartDevice* missing = manager.findDevice(999);
+    }
+    catch (const DeviceNotFoundException& e) {
+        cout << "Successfully caught exception: " << e.what() << endl;
+    }
+
+    cout << "\n/!/ Testing Invalid Temperature State..." << endl;
+    try {
+        SmartDevice* device = manager.findDevice(2);
+        Thermostat* myThermo = dynamic_cast<Thermostat*>(device);
+        if (myThermo) {
+            myThermo->setTemperature(150.0); 
+        }
+    }
+    catch (const InvalidValueException& e) {
+        cout << "Successfully caught exception: " << e.what() << endl;
+    }
+    
+    // 5. Final Audit: Verify changes made to system
     cout << "\n-///- Final System Audit -///-" << endl;
     manager.displayAll();
 
