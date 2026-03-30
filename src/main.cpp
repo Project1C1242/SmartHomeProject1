@@ -40,6 +40,9 @@ int main()
     catch (const InvalidValueException& e) {
         cout << "Error: " << e.what() << endl;
     }
+    catch (const DeviceStateException& e) {
+        cout << "Error: " << e.what() << endl;
+    }
 
     // Manual Interaction: Security (ID: 3)
         cout << "\n/!/ Interaction: Front Door (ID: 3)" << endl;
@@ -65,7 +68,7 @@ int main()
         Thermostat* myThermo = dynamic_cast<Thermostat*>(device);
 
         if (myThermo) {
-            int targetTemp = 72.5;
+            int targetTemp = 80;
             myThermo->setTemperature(targetTemp);
     
             cout << "Successfully adjusted " << myThermo->getName() << " to " << myThermo->getTemperature() << " degrees." << endl;

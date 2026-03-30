@@ -21,7 +21,7 @@ void Thermostat::setTemperature(float temp)
 void Thermostat::display() const
 {
     cout << "Thermostat [" << getName() << "] "
-         << "Current Temp: " << temperature <<" F" << endl;
+         << "Current Temp: " << temperature <<" Degrees" << endl;
 }
 
 int Thermostat::getTemperature() const {
