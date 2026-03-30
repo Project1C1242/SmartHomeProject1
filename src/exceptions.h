@@ -3,12 +3,22 @@
 
 #include <exception>
 
+
 class InvalidValueException : public std::exception
 {
 public:
     const char* what() const noexcept override
     {
         return "Invalid value provided";
+    }
+};
+
+class DeviceNotFoundException : public std::exception
+{
+public:
+    const char* what() const noexcept override
+    {
+        return "device not found";
     }
 };
 
