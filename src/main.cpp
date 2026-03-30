@@ -29,10 +29,11 @@ int main()
         SmartDevice* device = manager.findDevice(1);
         // Convert the generic pointer to a specific pointer
         Light* myLight = dynamic_cast<Light*>(device);
+        Switchable* swLight = dynamic_cast<Light*>(device);
 
-        if (myLight) {
+        if (myLight && swLight) {
             int targetBrightness = 85; 
-                myLight->turnOn();
+                swLight->turnOn();
                 myLight->setBrightness(targetBrightness);
             cout << "Successfully set " << myLight->getName() << " to " << myLight->getBrightness() << "% brightness." << endl;
         }
