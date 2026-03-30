@@ -48,4 +48,5 @@ bool Light::getIsOn() const {
 
 void Light::update()
 {
+    cout << "Checking lightbulb connectivity..." << endl;
 }
