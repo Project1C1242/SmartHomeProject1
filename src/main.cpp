@@ -69,7 +69,7 @@ int main()
         Thermostat* myThermo = dynamic_cast<Thermostat*>(device);
 
         if (myThermo) {
-            float targetTemp = 80.5f;
+            int targetTemp = 80;
             myThermo->setTemperature(targetTemp);
     
             cout << "Successfully adjusted " << myThermo->getName() << " to " << myThermo->getTemperature() << " degrees." << endl;
