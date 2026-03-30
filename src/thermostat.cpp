@@ -10,7 +10,7 @@ Thermostat::Thermostat(string name, int id) : SmartDevice(name, id)
     temperature = 68; //default temp
 }
 
-void Thermostat::setTemperature(float temp)
+void Thermostat::setTemperature(int temp)
 {
     if (temp < 50 || temp > 90)
         throw InvalidValueException();
@@ -24,7 +24,7 @@ void Thermostat::display() const
          << "Current Temp: " << temperature <<" Degrees" << endl;
 }
 
-float Thermostat::getTemperature() const {
+int Thermostat::getTemperature() const {
     return temperature; 
 }
 
