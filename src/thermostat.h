@@ -6,17 +6,17 @@
 class Thermostat : public SmartDevice
 {
 private:
-    float temperature;
+    int temperature;
 
 public:
     Thermostat(string name, int id);
-    float getTemperature() const;
+    int getTemperature() const;
 
     // Overriding the pure virtual functions from SmartDevice
     void display() const override;
     void update() override;
 
-    void setTemperature(float temp);
+    void setTemperature(double temp);
 };
 
 #endif
