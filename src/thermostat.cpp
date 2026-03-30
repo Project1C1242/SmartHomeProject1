@@ -24,10 +24,11 @@ void Thermostat::display() const
          << "Current Temp: " << temperature <<" Degrees" << endl;
 }
 
-int Thermostat::getTemperature() const {
+float Thermostat::getTemperature() const {
     return temperature; 
 }
 
 void Thermostat::update()
 {  
+    cout << "Updating Thermostat firmware..." << endl;
 }
